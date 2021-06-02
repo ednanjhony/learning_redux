@@ -4,7 +4,7 @@ import { IState } from '../..';
 
 type CheckProductStockRequest = ReturnType<typeof addProductToCart>;
 
-function checkProductStock({ payload }: CheckProductStockRequest) {
+function* checkProductStock({ payload }: CheckProductStockRequest) {
 	const { product } = payload;
 
 	const currentQuantity: number = yield select((state: IState) => {
